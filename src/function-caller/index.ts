@@ -25,3 +25,18 @@ export const getFunction = (key: string): Function | undefined => {
     return functionMap.get(key)
 }
 
+export const call = (key: string, ...args: any[]): any => {
+    const terageFunc = functionMap.get(key);
+
+    if (terageFunc) {
+        return terageFunc(...args);
+    }
+}
+
+export const asyncCall = async (key: string, ...args: any[]): Promise<any> => {
+    return call(key, ...args);
+}
+
+export const hasKey = (key: string) => {
+    return functionMap.has(key);
+}

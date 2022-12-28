@@ -8,7 +8,7 @@
     "/dist"
   ],
   "scripts": {
-    "test": "jest --coverage",
+    "test": "jest --coverage --watchAll",
     "build:compile": "npx babel src --extensions .ts --out-dir dist --source-maps",
     "build:types": "tsc",
     "build": "concurrently npm:build:*",
