@@ -1,5 +1,5 @@
 import IFunctionCaller from "./IFunctionCaller";
-export default class FunctionCaller implements IFunctionCaller {
+declare class FunctionCaller implements IFunctionCaller {
     readonly functionMap: Map<string, Function>;
     constructor(root: any);
     set: (key: string, func: Function) => boolean;
@@ -13,3 +13,5 @@ export default class FunctionCaller implements IFunctionCaller {
     getFunction: (key: string) => Function | undefined;
     getSize: () => number;
 }
+declare const _default: FunctionCaller;
+export default _default;

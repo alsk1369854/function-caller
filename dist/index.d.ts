@@ -1,6 +1,5 @@
 import FunctionCaller from "./FunctionCaller";
-declare const _FunctionCaller: FunctionCaller;
-export default _FunctionCaller;
+export default FunctionCaller;
 export declare const set: (key: string, func: Function) => boolean;
 export declare const call: (key: string, ...args: any[]) => any;
 export declare const asyncCall: (key: string, ...args: any[]) => Promise<any>;

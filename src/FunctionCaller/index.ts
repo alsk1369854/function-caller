@@ -1,7 +1,7 @@
 'use strict'
 import IFunctionCaller from "./IFunctionCaller";
 
-export default class FunctionCaller implements IFunctionCaller {
+class FunctionCaller implements IFunctionCaller {
     readonly functionMap: Map<string, Function> = new Map();
 
     constructor(root: any) {
@@ -61,3 +61,6 @@ export default class FunctionCaller implements IFunctionCaller {
         return this.functionMap.size
     }
 }
+
+export default new FunctionCaller((typeof window === 'object' && window as any) || this);
+
