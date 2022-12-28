@@ -1,10 +1,10 @@
 import IFunctionCaller from "./IFunctionCaller";
 
-class FunctionCaller implements IFunctionCaller {
+export class FunctionCaller implements IFunctionCaller {
     readonly functionMap: Map<string, Function> = new Map();
 
     constructor(root: any) {
-        if(root && !root.FunctionCaller){
+        if (root && !root.FunctionCaller) {
             root.FunctionCaller = this;
         }
     }
@@ -60,6 +60,5 @@ class FunctionCaller implements IFunctionCaller {
         return this.functionMap.size
     }
 }
-
-export default new FunctionCaller((typeof window === 'object' && window as any) || this);
-
+const functionCaller: FunctionCaller = new FunctionCaller((typeof window === 'object' && window as any) || this);
+export default functionCaller

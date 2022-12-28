@@ -9,6 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.FunctionCaller = void 0;
 class FunctionCaller {
     constructor(root) {
         this.functionMap = new Map();
@@ -57,5 +58,7 @@ class FunctionCaller {
         }
     }
 }
-exports.default = new FunctionCaller((typeof window === 'object' && window) || this);
+exports.FunctionCaller = FunctionCaller;
+const functionCaller = new FunctionCaller((typeof window === 'object' && window) || this);
+exports.default = functionCaller;
 //# sourceMappingURL=index.js.map
