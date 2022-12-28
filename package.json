@@ -10,10 +10,10 @@
   "scripts": {
     "test": "jest --coverage --watchAll",
     "build:compile": "npx babel src --extensions .ts --out-dir dist --source-maps",
-    "build:types": "tsc",
+    "build:types": "tsc --project tsconfig.build.json",
     "build": "concurrently npm:build:*",
     "watch:compile": "npx babel src --extensions .ts --out-dir dist --source-maps --watch",
-    "watch:types": "tsc --source-maps --watch",
+    "watch:types": "tsc --project tsconfig.build.json --watch",
     "watch": "concurrently npm:watch:*"
   },
   "repository": {
