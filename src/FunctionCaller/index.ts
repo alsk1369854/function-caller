@@ -13,7 +13,8 @@ export class FunctionCaller implements IFunctionCaller {
         const keyExists: boolean = this.hasKey(key);
 
         if (keyExists) {
-            throw new Error(`function-caller: Key "${key}" is exists`);
+            console.warn(`function-caller: Key "${key}" is exists`);
+            return false;
         } else {
             this.functionMap.set(key, func);
             return true;

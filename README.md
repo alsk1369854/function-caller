@@ -1,4 +1,13 @@
-# function-caller
+# function-caller 
+[![npm version](https://img.shields.io/npm/v/function-caller)](https://www.npmjs.com/package/function-caller) [![install size](https://img.shields.io/badge/dynamic/json?url=https://packagephobia.com/v2/api.json?p=function-caller&query=$.install.pretty&label=install%20size&style=flat-square)](https://packagephobia.now.sh/result?p=function-caller) ![check-code-coverage](https://img.shields.io/badge/code--coverage-97%25-brightgreen) ![npm type definitions](https://img.shields.io/npm/types/function-caller) ![NPM](https://img.shields.io/npm/l/function-caller)
+
+
+
+
+
+
+
+
 function-caller is a cross-component function call library written in Typescript
 
 ## Getting function-caller
@@ -12,7 +21,7 @@ html script tag
 ```
 
 ## Example
-First you have to import the module:
+### First you have to import the module:
 ```javascript
 import FunctionCaller from 'function-caller';
 

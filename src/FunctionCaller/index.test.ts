@@ -30,7 +30,7 @@ describe('function-caller', () => {
         const testFunc = (a: number, b: number) => a + b;
 
         FunctionCaller.set(key, testFunc);
-        expect(() => FunctionCaller.set(key, testFunc)).toThrow('function-caller: Key "test key" is exists');
+        expect(FunctionCaller.set(key, testFunc)).toBeFalsy();
 
         FunctionCaller.clear();
     });
