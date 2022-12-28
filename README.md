@@ -2,9 +2,13 @@
 function-caller is a cross-component function call library written in Typescript
 
 ## Getting function-caller
-You can get in on npm.
+npm
 ```shell
 npm install function-caller --save
+```
+html script tag
+```html
+<script src="https://unpkg.com/function-caller/dist/index.min.js"></script>
 ```
 
 ## Example

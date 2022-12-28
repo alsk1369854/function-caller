@@ -1,12 +1,11 @@
-'use strict'
 import IFunctionCaller from "./IFunctionCaller";
 
 class FunctionCaller implements IFunctionCaller {
     readonly functionMap: Map<string, Function> = new Map();
 
     constructor(root: any) {
-        if(root && !root._FunctionCaller){
-            root._FunctionCaller = this;
+        if(root && !root.FunctionCaller){
+            root.FunctionCaller = this;
         }
     }
 
