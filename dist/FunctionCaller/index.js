@@ -16,7 +16,8 @@ class FunctionCaller {
         this.set = (key, func) => {
             const keyExists = this.hasKey(key);
             if (keyExists) {
-                throw new Error(`function-caller: Key "${key}" is exists`);
+                console.warn(`function-caller: Key "${key}" is exists`);
+                return false;
             }
             else {
                 this.functionMap.set(key, func);
