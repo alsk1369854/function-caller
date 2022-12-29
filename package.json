@@ -11,7 +11,7 @@
     "test": "jest --coverage --coverageReporters='json-summary'",
     "test:watch": "jest --coverage --watchAll",
     "build:compile": "npx babel src --extensions .ts --out-dir dist --source-maps",
-    "build:types": "tsc --project tsconfig.build.json",
+    "build:types": "tsc",
     "build:min": "browserify dist/index.js -o dist/index.min.js",
     "build:cra": "npx update-badge coverage/coverage-summary.json",
     "build": "concurrently npm:build:*",
