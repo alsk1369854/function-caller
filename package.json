@@ -1,6 +1,6 @@
 {
   "name": "function-caller",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "description": "",
   "main": "dist/index.js",
   "type": "dist/index.d.ts",
@@ -8,11 +8,12 @@
     "/dist"
   ],
   "scripts": {
-    "test": "jest --coverage --watchAll",
-    "update-coverage": "npx update-badge --set 100",
+    "test": "jest --coverage",
+    "test:watch": "jest --coverage --watchAll",
     "build:compile": "npx babel src --extensions .ts --out-dir dist --source-maps",
     "build:types": "tsc --project tsconfig.build.json",
     "build:min": "browserify dist/index.js -o dist/index.min.js",
+    "build:cra": "npm run test && npx update-badge coverage/coverage-summary.json",
     "build": "concurrently npm:build:*",
     "watch:compile": "npx babel src --extensions .ts --out-dir dist --source-maps --watch",
     "watch:types": "tsc --project tsconfig.build.json --watch",
@@ -25,7 +26,9 @@
   },
   "keywords": [
     "function",
-    "caller"
+    "caller",
+    "react",
+    "typescript"
   ],
   "bugs": {
     "url": "https://github.com/alsk1369854/function-caller/issues"
