@@ -13,9 +13,18 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: 18.x
+
     - name: Install package
       run: npm install
+
     - name: Testing
       run: npm run test
-    - name: Build
-      run: npm run build
+
+    - name: Build compile 
+      run: npm run build:compile
+    - name: "build:types"
+      run: npm run build:types
+    - name: "build:min"
+      run: npm run build:min
+    - name: "build:cra"
+      run: npm run build:cra
