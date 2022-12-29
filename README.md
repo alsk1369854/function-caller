@@ -167,4 +167,5 @@ export default function B() {
 | getSize()                              | number                                            |
 
 ## License
-MIT
+
+[MIT](LICENSE)
