@@ -1,6 +1,12 @@
-import FunctionCaller from './index'
+import FunctionCaller, { FunctionCaller as FunctionCallerClass } from './index'
 
 describe('function-caller', () => {
+    test('constructor', () => {
+        const _object: any = {};
+        const fc = new FunctionCallerClass(_object);
+        expect(_object.FunctionCaller).toEqual(fc);
+    })
+
     test('functionMap size', () => {
         FunctionCaller.set('1', () => { });
         expect(FunctionCaller.getSize()).toBe(1);

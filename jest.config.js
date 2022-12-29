@@ -3,5 +3,6 @@ module.exports = {
   coverageDirectory: "coverage",
   preset: 'ts-jest',
   testEnvironment: "node",
-  testRegex: "(/tests/.*|(\\.|/)(test|spec))\\.tsx?$"
+  testRegex: "(/tests/.*|(\\.|/)(test|spec))\\.tsx?$",
+  coverageReporters: [['text', {skipFull: true}], "lcov", "json-summary"]
 };
