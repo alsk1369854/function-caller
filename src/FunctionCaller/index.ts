@@ -14,7 +14,7 @@ export class FunctionCaller implements IFunctionCaller {
 
         if (keyExists) {
             console.warn(`function-caller: Key "${key}" is exists`);
-            return true;
+            return false;
         } else {
             this.functionMap.set(key, func);
             return true;
