@@ -2,35 +2,49 @@
 [![npm version](https://img.shields.io/npm/v/function-caller)](https://www.npmjs.com/package/function-caller) [![install size](https://img.shields.io/badge/dynamic/json?url=https://packagephobia.com/v2/api.json?p=function-caller&query=$.install.pretty&label=install%20size&style=flat-square)](https://packagephobia.now.sh/result?p=function-caller) ![check-code-coverage](https://img.shields.io/badge/code--coverage-97%25-brightgreen) ![npm type definitions](https://img.shields.io/npm/types/function-caller) ![NPM](https://img.shields.io/npm/l/function-caller)
 
 
-
-
-
-
-
-
 function-caller is a cross-component function call library written in Typescript
 
-## Getting function-caller
-npm
-```shell
-npm install function-caller --save
+## Installing
+
+### Package manager
+
+Using npm:
+
+```bash
+npm install function-caller
 ```
-html script tag
+
+Using yarn:
+
+```bash
+$ yarn add function-caller
+```
+
+Once the package is installed, you can import the library using `import` or `require` approach:
+
+```js
+import FunctionCaller, {set, call} from 'function-caller';
+```
+
+If you use `require` for importing, **only default export is available**:
+
+```js
+const FunctionCaller = require('function-caller');
+```
+
+### CDN
+
+Using unpkg CDN:
+
 ```html
 <script src="https://unpkg.com/function-caller/dist/index.min.js"></script>
 ```
 
 ## Example
-### First you have to import the module:
-```javascript
-import FunctionCaller from 'function-caller';
-
-// or when using CommonJS
-const FunctionCaller = require('function-caller');
-```
 
 ### Basic example
-```javascript
+
+```js
 // create a function
 const myFunc = function (a, b) {
     return a + b;
@@ -51,7 +65,8 @@ FunctionCaller.asyncCall(myKey, 4, 6).then((value) => {
 ```
 
 ### Unregister function
-```javascript
+
+```js
 // create a function
 const myFunc = function (a, b) {
     return a + b;
@@ -66,7 +81,8 @@ FunctionCaller.remove(myKey);
 ```
 
 ### Clear all registration
-```javascript
+
+```js
 FunctionCaller.set('key1', ()=>{});
 FunctionCaller.set('key2', ()=>{});
 FunctionCaller.set('key3', ()=>{});
@@ -76,7 +92,9 @@ FunctionCaller.clear();
 ```
 
 ## Working with React
+
 ### Register function in component A
+
 ```jsx
 import React, { useState, useEffect } from 'react'
 // import function-caller library
@@ -108,6 +126,7 @@ export default function A() {
 ```
 
 ### Call function in component B
+
 ```jsx
 import React from 'react'
 // import function-caller library
@@ -131,6 +150,21 @@ export default function B() {
   )
 }
 ```
+
+## function-caller API
+
+| function                               | return                                            |
+| -------------------------------------- | ------------------------------------------------- |
+| set(key: string, func: Function)       | boolean                                           |
+| call(key: string, ...args: any[])      | any                                               |
+| asyncCall(key: string, ...args: any[]) | Promise\<any>                                     |
+| remove(key: string)                    | void                                              |
+| clear()                                | void                                              |
+| hasKey(key: string)                    | boolean                                           |
+| getKeys()                              | IterableIterator\<string>                         |
+| getEntries()                           | IterableIterator<[string, Function]>              |
+| getFunction(key: string)               | Function                             \| undefined |
+| getSize()                              | number                                            |
 
 ## License
 MIT
